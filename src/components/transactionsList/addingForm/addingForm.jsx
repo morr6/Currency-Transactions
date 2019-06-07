@@ -16,9 +16,16 @@ export class AddingFormPure extends Component {
 
     this.state = {
       transactionName: '',
-      transactionValue: null,
+      transactionValue: 0,
       transactionDate: '',
    }
+  }
+
+  clearState() {
+    this.setState({
+      transactionName: '',
+      transactionValue: 0,
+    })
   }
 
   setTransactionName(event) {
@@ -26,10 +33,7 @@ export class AddingFormPure extends Component {
   }
 
   setTransactionValue(event) {
-    let value = Number(event.target.value)
-    if (typeof value === "number") {
-      this.setState({transactionValue: value})
-    }
+    this.setState({transactionValue: parseFloat(event.target.value)})
   } 
 
   setTransactionDate() {
@@ -48,11 +52,13 @@ export class AddingFormPure extends Component {
     }
     this.props.addTransactionToStore(LocalStorage.getTransactionsFromStorage())
     this.props.toogleModal();
+    this.clearState();
   }
 
   closeModal(event) {
-    event.preventDefault()
-    this.props.toogleModal()
+    event.preventDefault();
+    this.props.toogleModal();
+    this.clearState();
   }
 
   componentDidMount() {
@@ -65,11 +71,14 @@ export class AddingFormPure extends Component {
             Transaction name
             <FromTextarea
               type='name' 
+              value={this.state.transactionName}
               onChange={(event) => this.setTransactionName(event)}
             />
             <div>
               Value
               <FormInput 
+                type='number' min='0'
+                value={this.state.transactionValue}
                 placeholder='EUR'
                 onChange={(event) => this.setTransactionValue(event)} 
               /> 
