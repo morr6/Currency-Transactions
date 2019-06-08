@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { ContentWrapper,} from './mainContainer.s';
 import { Header } from '../header/header';
 import { TransactionsList } from '../transactionsList/transactionsList';
 import * as LocalStorage from '../../localStorage/localStorageHandler';
-import {addTransactionToStore}  from '../../Utilities/actions/currencyActionList'
+import { addTransactionToStore }  from '../../Utilities/actions/currencyActionList'
+import { MostExpensiveTransaction } from '../mostExpensiveTransaction/mostExpensiveTransaction'
 
 export class MainContainerPure extends Component {
 
@@ -18,6 +19,7 @@ export class MainContainerPure extends Component {
       <ContentWrapper>
         <Header />
         <TransactionsList />
+        <MostExpensiveTransaction /> 
       </ContentWrapper>
     )
   }

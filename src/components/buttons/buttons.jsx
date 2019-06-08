@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { ButtonsWrapper, Button } from './buttons.s';
-import * as LocalStorage from '../../../localStorage/localStorageHandler'
+import * as LocalStorage from '../../localStorage/localStorageHandler'
 import { 
   switchDeleteMode,
   clearIdTable,
   addTransactionToStore,
-  toogleModal } from '../../../Utilities/actions/currencyActionList' 
+  toogleModal } from '../../Utilities/actions/currencyActionList' 
 
 export class ButtonsPure extends Component {
 

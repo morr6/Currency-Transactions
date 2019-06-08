@@ -5,7 +5,7 @@ import {TransactionWrapper,
       } from './transactions.s';
 import {addTransactionIdToDelete, 
         deleteTransactionIdFromTable 
-      } from '../../../Utilities/actions/currencyActionList';
+      } from '../../Utilities/actions/currencyActionList';
 
 export class TransactionPure extends Component {
   

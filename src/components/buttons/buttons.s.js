@@ -1,5 +1,5 @@
 import glamorous from 'glamorous';
-import * as color from '../../../Utilities/colors'
+import * as color from '../../Utilities/colors'
 
   export const ButtonsWrapper = glamorous.div({
     display: 'flex',

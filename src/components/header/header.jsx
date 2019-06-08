@@ -3,7 +3,7 @@ import { HeaderWrapper, EuroRateWrapper } from './header.s';
 import { isApiLoading, setPlnRate } from '../../Utilities/actions/currencyActionList'
 import { connect } from 'react-redux';
 import { plnRate } from '../../Utilities/api/currencyApi';
-import { Buttons } from './buttons/buttons';
+import { Buttons } from '../buttons/buttons';
 
 export class HeaderPure extends Component {
 

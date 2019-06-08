@@ -1,5 +1,11 @@
 import glamorous from 'glamorous';
-import * as color from '../../../Utilities/colors'
+import * as color from '../../Utilities/colors'
+import {css} from 'glamor'
+
+const dropModal = css.keyframes({
+  '0%': { top: `-50%` },
+  '100%': { top: '10%' }
+})
 
 export const AddingFormWrapper = glamorous.form(props => {
   return {
@@ -9,8 +15,9 @@ export const AddingFormWrapper = glamorous.form(props => {
     position: 'absolute',
     zIndex: 999,
     left: '40%', 
-    marginTop: props.isModalOpen ? 0 : '-50%',
-    transition: '.75s',
+    top: '10%',
+    animation: props.isModalOpen ?  `${dropModal} .5s ease-in-out` : '',  
+    transition: 'top 1s linear',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-around',

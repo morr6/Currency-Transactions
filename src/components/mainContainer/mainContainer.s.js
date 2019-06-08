@@ -5,6 +5,7 @@ export const ContentWrapper = glamorous.div({
   flexDirection: 'column',
   alignItems: 'center',
   marginTop: '5%',
+  overflowX: 'hidden'
 })
 
 // background: #1d2a32;

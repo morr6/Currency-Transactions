@@ -5,10 +5,10 @@ import {
   FormInput, 
   FromTextarea,
   ButtonsWrapper,} from './addingForm.s';
-import * as LocalStorage from '../../../localStorage/localStorageHandler';
-import * as date from '../../../Utilities/dateHandler';
-import {addTransactionToStore,toogleModal} from '../../../Utilities/actions/currencyActionList'
-import {Button} from '../../header/buttons/buttons.s'
+import * as LocalStorage from '../../localStorage/localStorageHandler';
+import * as date from '../../Utilities/dateHandler';
+import {addTransactionToStore,toogleModal} from '../../Utilities/actions/currencyActionList'
+import {Button} from '../buttons/buttons.s'
 
 export class AddingFormPure extends Component {
   constructor() {

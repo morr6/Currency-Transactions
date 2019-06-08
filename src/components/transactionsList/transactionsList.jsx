@@ -5,9 +5,9 @@ import {TransactionsListWrapper,
         SumWrapper,
         ModalBackground} from './transactionsList.s';
 import { connect } from 'react-redux';
-import { Transaction } from './transaction/transaction';
-import { AddingForm } from './addingForm/addingForm';
-import { ListHeader } from './HeaderCategories/HeaderCategories';
+import { Transaction } from '../transaction/transaction';
+import { AddingForm } from '../addingForm/addingForm';
+import { ListHeader } from '../HeaderCategories/HeaderCategories';
 import { toogleModal } from '../../Utilities/actions/currencyActionList'
 
 
@@ -44,11 +44,14 @@ export class TransactionsListPure extends Component {
     return (
       <TransactionsListWrapper>
         { this.props.isModalOpen && 
-          <ModalBackground 
-            onClick={() => this.props.toogleModal()}
-          /> 
+          <div>
+            <ModalBackground 
+              onClick={() => this.props.toogleModal()}
+            /> 
+            
+            <AddingForm />
+          </div>
         }
-        <AddingForm />
 
         <Transactions>
           <ListHeader />
